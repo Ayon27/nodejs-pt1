@@ -1,7 +1,7 @@
 const http = require("http");
 
 const server = http.createServer((req, res) => {
-  res.write("asd");
+  if (req.url === "/asd") res.write("asd");
   res.end();
 });
 

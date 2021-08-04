@@ -20,7 +20,7 @@ eventInvoker.invoke();
 const os = require("os");
 const fs = require("fs");
 var cntr = require("./counterPrint");
-const eventDemo = require("./eventDemo");
+const eventDemo = require("./eventDemo").default;
 
 // console.log(os.cpus());
 

@@ -2,17 +2,27 @@
 
 // var myEmitter = new events.EventEmitter();
 
-// myEmitter.on("event", function (msg) {
+// myEmitter.on("event", (msg) => {
 //   console.log(msg);
 // });
 
 // myEmitter.emit("event", "event emitted");
 
+const eventInstance = require("./eventDemo");
+const eventInvoker = new eventInstance();
+
+eventInvoker.on("event2", ({ time, msg }) => {
+  console.log(`Text: ${time} ${msg}`);
+});
+
+eventInvoker.invoke();
+
 const os = require("os");
 const fs = require("fs");
 var cntr = require("./counterPrint");
+const eventDemo = require("./eventDemo");
 
-console.log(os.cpus());
+// console.log(os.cpus());
 
 var testDataString = JSON.stringify(cntr.testData);
 
@@ -28,3 +38,5 @@ fs.readFile("test.txt", (err, data) => {
   if (err) return console.log(err);
   console.log(data.toString());
 });
+
+// console.log("65");

@@ -5,8 +5,8 @@ const server = http.createServer((req, res) => {
   res.end();
 });
 
-server.on("connection", (socket) => {
-  console.log("new");
+server.on("connection", () => {
+  console.log("server stared");
 });
 
 server.listen(3000);

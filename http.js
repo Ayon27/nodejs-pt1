@@ -1,8 +1,12 @@
 const http = require("http");
+const fs = require("fs");
 
+//output as stream
 const server = http.createServer((req, res) => {
-  if (req.url === "/asd") res.write("asd");
-  res.end();
+  if (req.url === "/asd") {
+    const output = fs.createReadStream("rndTxt.txt");
+    output.pipe(res);
+  }
 });
 
 server.on("connection", () => {
